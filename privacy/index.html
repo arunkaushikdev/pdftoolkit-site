@@ -9,18 +9,27 @@
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <img src="../icon.png" alt="">
-    <a href="../">PdfToolKit</a>
-    <nav><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></nav>
-  </header>
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="brand" href="../"><img src="../icon.png" alt="">PdfToolKit</a>
+    <nav class="tabs">
+      <a href="../">Home</a>
+      <a href="../privacy/" class="active">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="../contact/">Contact</a>
+    </nav>
+  </div>
+</header>
 
+<main class="wrap">
+
+  <div class="hero-anim">
   <div class="overline">Privacy Policy</div>
   <h1>Your PDFs never leave your phone.</h1>
   <p class="muted">Effective date: 7 November 2026 · Applies to the PdfToolKit Android app (package <code>com.arunkaushik.pdftoolkit</code>)</p>
+  </div>
 
-  <div class="card">
+  <div class="card reveal">
     <span class="pill">The short version</span>
     <ul>
       <li>Every PDF feature — reading, merging, splitting, rotating, extracting and deleting pages — runs entirely on your device. <strong>Your files and their contents are never uploaded</strong> to us or anyone else.</li>
@@ -98,8 +107,9 @@
   <p>Arun Datt Kaushik · <a href="mailto:arun.idevs@gmail.com">arun.idevs@gmail.com</a></p>
 
   <footer class="muted">
-    <a href="../">Home</a><a href="../terms/">Terms of Service</a><span>© 2026 Arun Datt Kaushik</span>
+    <a href="../">Home</a><a href="../terms/">Terms of Service</a><a href="../contact/">Contact</a><span>© 2026 Arun Datt Kaushik</span>
   </footer>
-</div>
+</main>
+<script src="../animate.js"></script>
 </body>
 </html>

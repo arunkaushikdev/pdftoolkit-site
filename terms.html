@@ -9,16 +9,25 @@
 <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <img src="./icon.png" alt="">
-    <a href="./">PdfToolKit</a>
-    <nav><a href="./privacy/">Privacy</a><a href="./terms/">Terms</a></nav>
-  </header>
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="brand" href="./"><img src="./icon.png" alt="">PdfToolKit</a>
+    <nav class="tabs">
+      <a href="./">Home</a>
+      <a href="./privacy/">Privacy</a>
+      <a href="./terms/" class="active">Terms</a>
+      <a href="./contact/">Contact</a>
+    </nav>
+  </div>
+</header>
 
+<main class="wrap">
+
+  <div class="hero-anim">
   <div class="overline">Terms of Service</div>
   <h1>Terms of Service</h1>
   <p class="muted">Effective date: 7 November 2026</p>
+  </div>
 
   <p>These terms apply to the PdfToolKit Android app (“the app”), provided by Arun Datt Kaushik (“we”, “us”). By installing or using the app you agree to them. If you do not agree, please uninstall the app.</p>
 
@@ -60,8 +69,9 @@
   <p>Arun Datt Kaushik · <a href="mailto:arun.idevs@gmail.com">arun.idevs@gmail.com</a></p>
 
   <footer class="muted">
-    <a href="./">Home</a><a href="./privacy/">Privacy Policy</a><span>© 2026 Arun Datt Kaushik</span>
+    <a href="./">Home</a><a href="./privacy/">Privacy Policy</a><a href="./contact/">Contact</a><span>© 2026 Arun Datt Kaushik</span>
   </footer>
-</div>
+</main>
+<script src="./animate.js"></script>
 </body>
 </html>
