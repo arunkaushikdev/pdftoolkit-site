@@ -151,6 +151,12 @@ ul { padding-left: 22px; }
   background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 700;
   letter-spacing: .04em; text-transform: uppercase; padding: 4px 10px 4px 8px; border-radius: 999px;
 }
+.progress-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--border); color: var(--muted); font-size: 12px; font-weight: 700;
+  letter-spacing: .04em; text-transform: uppercase; padding: 4px 10px 4px 8px; border-radius: 999px;
+}
+.static-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); flex: none; }
 .pulse-dot {
   width: 7px; height: 7px; border-radius: 50%; background: var(--accent); position: relative; flex: none;
 }
