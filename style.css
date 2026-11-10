@@ -278,3 +278,23 @@ body { position: relative; overflow-x: hidden; }
 .pill { animation: breathe 3s ease-in-out infinite; }
 @keyframes breathe { 0%,100% { box-shadow: 0 0 0 0 var(--accent-soft); } 50% { box-shadow: 0 0 0 8px transparent; } }
 @media (max-width: 560px) { .hero-visual { transform: scale(.85); } .stats .num { font-size: 24px; } }
+
+/* hero doc contents */
+.doc .tag { position: absolute; top: 10px; right: 10px; font-style: normal; font-size: 9px; font-weight: 800; letter-spacing: .06em; color: var(--accent); background: var(--accent-soft); padding: 2px 6px; border-radius: 6px; }
+.doc .img { display: block; height: 44px; border-radius: 8px; margin: 2px 0 10px; text-decoration: none;
+  background: linear-gradient(135deg, var(--accent-soft), rgba(212,175,94,.28)); position: relative; overflow: hidden; }
+.doc .img::after { content: ''; position: absolute; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); opacity: .7; top: 8px; left: 10px; }
+.doc .rows { display: grid; gap: 6px; margin: 2px 0 10px; }
+.doc .rows s { display: block; height: 10px; border-radius: 3px; background: var(--accent-soft); text-decoration: none; }
+.doc .rows s:nth-child(2) { background: var(--border); }
+.doc .bar { position: absolute; left: 16px; right: 16px; bottom: 16px; height: 8px; border-radius: 4px; background: var(--border); overflow: hidden; }
+.doc .bar span { display: block; height: 100%; width: 100%; border-radius: 4px; background: var(--accent); transform-origin: left; animation: shrinkbar 3.6s ease-in-out infinite; }
+@keyframes shrinkbar { 0% { transform: scaleX(1); } 55%, 100% { transform: scaleX(.4); } }
+
+/* updates timeline */
+.release { margin-left: 18px; }
+.release::before { content: ''; position: absolute; left: -18px; top: 30px; width: 11px; height: 11px; border-radius: 50%; background: var(--border); border: 2px solid var(--bg); z-index: 1; }
+.release-latest::before { background: var(--accent); animation: pulse-ring 2s ease-out infinite; }
+@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 var(--accent-soft); } 100% { box-shadow: 0 0 0 10px transparent; } }
+.release::after { content: ''; position: absolute; left: -13px; top: 42px; bottom: -34px; width: 1px; background: var(--border); }
+.release:last-of-type::after { display: none; }
