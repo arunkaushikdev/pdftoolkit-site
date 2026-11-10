@@ -30,15 +30,12 @@
     <p class="muted">Every PdfToolKit release, in plain language. Currently rolling out through closed testing on Google Play.</p>
   </div>
 
-  <div class="card reveal" style="margin-bottom:28px">
-    <h3 style="margin-top:0">Known issues</h3>
-    <ul class="release-notes">
-      <li><strong>Saving highlights into the original PDF.</strong> On Android 10 and older, Android does not let an app change a PDF it only opened from the Recent or Library lists. Use <strong>Save as a new copy</strong> — it always works, and the new copy appears at the top of Recent. PDFs opened with <strong>Open PDF</strong> can usually be updated in place.</li>
-      <li><strong>Renaming a PDF in place.</strong> For the same reason, some files can't be renamed on Android 10 and older. PdfToolKit saves a renamed copy in a folder you choose instead; the original stays untouched.</li>
-      <li><strong>Selecting text in scanned PDFs.</strong> Scanned or photo-based PDFs have no text to select yet. Text recognition (OCR) is planned for a later release.</li>
-    </ul>
+  <div class="seg" role="tablist" aria-label="Updates">
+    <button class="seg-btn active" role="tab" aria-selected="true" data-panel="releases" type="button">Releases</button>
+    <button class="seg-btn" role="tab" aria-selected="false" data-panel="issues" type="button">Known issues <span class="seg-count">3</span></button>
   </div>
 
+  <section id="panel-releases" class="panel">
   <div class="release release-latest reveal">
     <div class="release-head">
       <span class="release-version">1.0.6</span>
@@ -138,6 +135,19 @@
     </ul>
   </div>
 
+  </section>
+
+  <section id="panel-issues" class="panel" hidden>
+  <div class="card reveal">
+    <h3 style="margin-top:0">Known issues</h3>
+    <ul class="release-notes">
+      <li><strong>Saving highlights into the original PDF.</strong> On Android 10 and older, Android does not let an app change a PDF it only opened from the Recent or Library lists. Use <strong>Save as a new copy</strong> — it always works, and the new copy appears at the top of Recent. PDFs opened with <strong>Open PDF</strong> can usually be updated in place.</li>
+      <li><strong>Renaming a PDF in place.</strong> For the same reason, some files can't be renamed on Android 10 and older. PdfToolKit saves a renamed copy in a folder you choose instead; the original stays untouched.</li>
+      <li><strong>Selecting text in scanned PDFs.</strong> Scanned or photo-based PDFs have no text to select yet. Text recognition (OCR) is planned for a later release.</li>
+    </ul>
+  </div>
+  </section>
+
   <div class="card reveal" style="margin-top:32px">
     <h3 style="margin-top:0">Have an idea or found a bug?</h3>
     <p class="muted" style="margin-bottom:14px">We're actively building PdfToolKit — your feedback shapes what comes next.</p>
@@ -150,5 +160,26 @@
 </main>
 
 <script src="../animate.js"></script>
+<script>
+(function () {
+  var btns = document.querySelectorAll('.seg-btn');
+  function show(name) {
+    btns.forEach(function (b) {
+      var on = b.getAttribute('data-panel') === name;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    ['releases', 'issues'].forEach(function (n) {
+      var el = document.getElementById('panel-' + n);
+      el.hidden = n !== name;
+      if (n === name) el.querySelectorAll('.reveal').forEach(function (r) { r.classList.add('in'); });
+    });
+    if (history.replaceState) history.replaceState(null, '', name === 'issues' ? '#known-issues' : location.pathname);
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-panel')); }); });
+  if (location.hash === '#known-issues') show('issues');
+})();
+</script>
+
 </body>
 </html>
