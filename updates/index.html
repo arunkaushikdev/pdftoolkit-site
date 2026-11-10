@@ -30,6 +30,15 @@
     <p class="muted">Every PdfToolKit release, in plain language. Currently rolling out through closed testing on Google Play.</p>
   </div>
 
+  <div class="card reveal" style="margin-bottom:28px">
+    <h3 style="margin-top:0">Known issues</h3>
+    <ul class="release-notes">
+      <li><strong>Saving highlights into the original PDF.</strong> On Android 10 and older, Android does not let an app change a PDF it only opened from the Recent or Library lists. Use <strong>Save as a new copy</strong> — it always works, and the new copy appears at the top of Recent. PDFs opened with <strong>Open PDF</strong> can usually be updated in place.</li>
+      <li><strong>Renaming a PDF in place.</strong> For the same reason, some files can't be renamed on Android 10 and older. PdfToolKit saves a renamed copy in a folder you choose instead; the original stays untouched.</li>
+      <li><strong>Selecting text in scanned PDFs.</strong> Scanned or photo-based PDFs have no text to select yet. Text recognition (OCR) is planned for a later release.</li>
+    </ul>
+  </div>
+
   <div class="release release-latest reveal">
     <div class="release-head">
       <span class="release-version">1.0.5</span>
