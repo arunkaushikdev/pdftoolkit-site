@@ -69,3 +69,14 @@
     counters.forEach(function (el) { co.observe(el); });
   }
 })();
+
+// Soft floating document shapes on the empty sides of wide screens.
+(function () {
+  ['l', 'r'].forEach(function (side) {
+    var d = document.createElement('div');
+    d.className = 'side-deco ' + side;
+    d.setAttribute('aria-hidden', 'true');
+    d.innerHTML = '<div class="sd a"><b></b><b></b><b></b></div><div class="sd c"><b></b><b></b><b></b></div><div class="sd e"><b></b><b></b><b></b></div>';
+    document.body.insertBefore(d, document.body.firstChild);
+  });
+})();
