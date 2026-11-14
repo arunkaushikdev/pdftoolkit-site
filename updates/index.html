@@ -32,6 +32,7 @@
 
   <div class="seg" role="tablist" aria-label="Updates">
     <button class="seg-btn active" role="tab" aria-selected="true" data-panel="releases" type="button">Releases</button>
+    <button class="seg-btn" role="tab" aria-selected="false" data-panel="hotfixes" type="button">Hotfixes <span class="seg-count">2</span></button>
     <button class="seg-btn" role="tab" aria-selected="false" data-panel="issues" type="button">Known issues <span class="seg-count">3</span></button>
   </div>
 
@@ -177,6 +178,17 @@
 
   </section>
 
+  <section id="panel-hotfixes" class="panel" hidden>
+  <div class="card reveal">
+    <h3 style="margin-top:0">Hotfixes</h3>
+    <p class="muted" style="margin:-4px 0 6px;font-size:14px">Quick fixes for crashes and serious bugs, newest first. Last updated 14 November 2026, 1:31 PM IST</p>
+    <ul class="release-notes">
+      <li><strong>App closed when opening Library → My folder.</strong> Opening the My folder view in the Library tab could close the app. Fixed so it opens normally.<br><span class="issue-meta"><span class="issue-fixed">Fixed</span> In 1.0.8 (Build 9) · 14 November 2026, 1:20 PM IST · Introduced in 1.0.7</span></li>
+      <li><strong>App closed when cropping a camera photo.</strong> Cropping a photo taken with the camera could close the app, especially with very high-resolution photos. Fixed, and the picture now shows properly while cropping.<br><span class="issue-meta"><span class="issue-fixed">Fixed</span> In 1.0.6 (Build 7) · 10 November 2026, 9:10 PM IST</span></li>
+    </ul>
+  </div>
+  </section>
+
   <section id="panel-issues" class="panel" hidden>
   <div class="card reveal">
     <h3 style="margin-top:0">Known issues</h3>
@@ -210,15 +222,16 @@
       b.classList.toggle('active', on);
       b.setAttribute('aria-selected', on ? 'true' : 'false');
     });
-    ['releases', 'issues'].forEach(function (n) {
+    ['releases', 'hotfixes', 'issues'].forEach(function (n) {
       var el = document.getElementById('panel-' + n);
       el.hidden = n !== name;
       if (n === name) el.querySelectorAll('.reveal').forEach(function (r) { r.classList.add('in'); });
     });
-    if (history.replaceState) history.replaceState(null, '', name === 'issues' ? '#known-issues' : location.pathname);
+    if (history.replaceState) history.replaceState(null, '', name === 'issues' ? '#known-issues' : name === 'hotfixes' ? '#hotfixes' : location.pathname);
   }
   btns.forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-panel')); }); });
   if (location.hash === '#known-issues') show('issues');
+  if (location.hash === '#hotfixes') show('hotfixes');
 })();
 </script>
 
