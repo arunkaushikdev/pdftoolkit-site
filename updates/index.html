@@ -32,16 +32,37 @@
 
   <div class="seg" role="tablist" aria-label="Updates">
     <button class="seg-btn active" role="tab" aria-selected="true" data-panel="releases" type="button">Releases</button>
-    <button class="seg-btn" role="tab" aria-selected="false" data-panel="hotfixes" type="button">Hotfixes <span class="seg-count">2</span></button>
-    <button class="seg-btn" role="tab" aria-selected="false" data-panel="issues" type="button">Known issues <span class="seg-count">3</span></button>
+    <button class="seg-btn" role="tab" aria-selected="false" data-panel="hotfixes" type="button">Hotfixes <span class="seg-count">3</span></button>
+    <button class="seg-btn" role="tab" aria-selected="false" data-panel="issues" type="button">Known issues <span class="seg-count">4</span></button>
   </div>
 
   <section id="panel-releases" class="panel">
   <div class="release release-latest reveal">
     <div class="release-head">
+      <span class="release-version">1.0.9</span>
+      <span class="release-date">Build 10 · 19 November 2026, 12:10 PM IST</span>
+      <span class="latest-badge"><span class="pulse-dot"></span>Latest</span>
+    </div>
+    <h4 class="release-sec">New features</h4>
+    <ul class="release-notes">
+      <li><span class="release-tag">New</span>Find in PDF — tap the search icon in the Reader, type a word or even a few letters, and every match is found. Step through them with the arrows, or open the list to see each match with the words around it. Matches are marked on the page. (Works on PDFs with a text layer; scanned pages are not searched yet.)</li>
+      <li><span class="release-tag">New</span>Print — print a PDF, or save it as a PDF, from the Reader's three-dots menu.</li>
+      <li><span class="release-tag">New</span>File info — see the page count, file size, page size (like A4), PDF version and the title, author and dates stored in the file.</li>
+      <li><span class="release-tag">New</span>Page thumbnails — turn on a strip of small page previews at the bottom of the Reader (three-dots menu → Page thumbnails). The current page is highlighted and one tap jumps to any page. Your choice is remembered.</li>
+      <li><span class="release-tag">Improved</span>Reading is much smoother — pinch zoom, dragging a zoomed page and double-tap zoom were rebuilt to run natively, so scrolling and zooming no longer stutter.</li>
+    </ul>
+    <h4 class="release-sec">Fixes</h4>
+    <ul class="release-notes">
+      <li><span class="release-tag">Fixed</span>A PDF opened from WhatsApp, Files or another app could show "Can't open this PDF" when you opened it again from Recent. PdfToolKit now keeps its own copy of such files, so they reopen reliably.</li>
+      <li><span class="release-tag">Fixed</span>Text no longer shifts or shakes for a moment when a page sharpens after zooming.</li>
+      <li><span class="release-tag">Fixed</span>If Android has withdrawn access to a file, PdfToolKit now says so clearly and explains how to open it again.</li>
+    </ul>
+  </div>
+
+  <div class="release reveal">
+    <div class="release-head">
       <span class="release-version">1.0.8</span>
       <span class="release-date">Build 9 · 14 November 2026, 1:20 PM IST</span>
-      <span class="latest-badge"><span class="pulse-dot"></span>Latest</span>
     </div>
     <h4 class="release-sec">Fixes</h4>
     <ul class="release-notes">
@@ -181,8 +202,9 @@
   <section id="panel-hotfixes" class="panel" hidden>
   <div class="card reveal">
     <h3 style="margin-top:0">Hotfixes</h3>
-    <p class="muted" style="margin:-4px 0 6px;font-size:14px">Quick fixes for crashes and serious bugs, newest first. Last updated 14 November 2026, 1:31 PM IST</p>
+    <p class="muted" style="margin:-4px 0 6px;font-size:14px">Quick fixes for crashes and serious bugs, newest first. Last updated 19 November 2026, 12:10 PM IST</p>
     <ul class="release-notes">
+      <li><strong>"Can't open this PDF" for files opened from WhatsApp or Files.</strong> A PDF opened from another app could fail with a permission error when opened again from Recent, because Android only gives temporary access. PdfToolKit now keeps a copy inside the app. A file that already failed once needs to be opened again from WhatsApp or Files one time.<br><span class="issue-meta"><span class="issue-fixed">Fixed</span> In 1.0.9 (Build 10) · 19 November 2026, 12:10 PM IST</span></li>
       <li><strong>App closed when opening Library → My folder.</strong> Opening the My folder view in the Library tab could close the app. Fixed so it opens normally.<br><span class="issue-meta"><span class="issue-fixed">Fixed</span> In 1.0.8 (Build 9) · 14 November 2026, 1:20 PM IST · Introduced in 1.0.7</span></li>
       <li><strong>App closed when cropping a camera photo.</strong> Cropping a photo taken with the camera could close the app, especially with very high-resolution photos. Fixed, and the picture now shows properly while cropping.<br><span class="issue-meta"><span class="issue-fixed">Fixed</span> In 1.0.6 (Build 7) · 10 November 2026, 9:10 PM IST</span></li>
     </ul>
@@ -192,11 +214,12 @@
   <section id="panel-issues" class="panel" hidden>
   <div class="card reveal">
     <h3 style="margin-top:0">Known issues</h3>
-    <p class="muted" style="margin:-4px 0 6px;font-size:14px">Last updated 14 November 2026, 1:20 PM IST · Latest release 1.0.8</p>
+    <p class="muted" style="margin:-4px 0 6px;font-size:14px">Last updated 19 November 2026, 12:10 PM IST · Latest release 1.0.9</p>
     <ul class="release-notes">
       <li><strong>Saving highlights into the original PDF.</strong> On Android 10 and older, Android does not let an app change a PDF it only opened from the Recent or Library lists. Use <strong>Save as a new copy</strong> — it always works, and the new copy appears at the top of Recent. PDFs opened with <strong>Open PDF</strong> can usually be updated in place.<br><span class="issue-meta"><span class="issue-open">Open</span> Seen in 1.0.6 · First listed 10 Nov 2026 · Last update 10 Nov 2026, 8:34 PM IST</span></li>
       <li><strong>Renaming a PDF in place.</strong> For the same reason, some files can't be renamed on Android 10 and older. PdfToolKit saves a renamed copy in a folder you choose instead; the original stays untouched.<br><span class="issue-meta"><span class="issue-open">Open</span> Seen in 1.0.6 · First listed 10 Nov 2026 · Last update 10 Nov 2026, 8:34 PM IST</span></li>
-      <li><strong>Brief flicker when zooming.</strong> Double-tap or pinch zoom in the reader can show a very short flicker or a thin grey band (the gap between pages) for a few milliseconds. It does not affect reading, the page content or your file, and we're still working on making it perfectly smooth.<br><span class="issue-meta"><span class="issue-open">Open</span> Seen in 1.0.6 · First listed 14 Nov 2026 · Last update 14 Nov 2026, 9:52 AM IST</span></li>
+      <li><strong>Brief flicker when zooming.</strong> Zooming was rebuilt in 1.0.9 and is much smoother. You may still notice a very short change in sharpness a moment after you stop zooming, when the page redraws in finer detail. It does not affect reading, the page content or your file.<br><span class="issue-meta"><span class="issue-open">Open</span> Seen in 1.0.6 · First listed 14 Nov 2026 · Last update 19 Nov 2026, 12:10 PM IST</span></li>
+      <li><strong>Find in PDF does not read scanned pages.</strong> Search works on PDFs that contain real text. A scan or photo of a page has no text to search, so it shows "No searchable text". You can still press and hold on a scanned page to select its text.<br><span class="issue-meta"><span class="issue-open">Open</span> Seen in 1.0.9 · First listed 19 Nov 2026 · Last update 19 Nov 2026, 12:10 PM IST</span></li>
     </ul>
   </div>
   </section>
